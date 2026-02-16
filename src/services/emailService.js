@@ -33,10 +33,10 @@ export const sendEmail = async (formData) => {
             serviceId,
             templateId,
             {
-                from_name: formData.name,
-                from_email: formData.email,
-                message: formData.message,
-                to_name: 'Sai Venu',
+                title: formData.intent, // Maps to {{title}} in template
+                name: formData.name,    // Maps to {{name}} in template
+                email: formData.email,  // Maps to {{email}} in template (for Reply To)
+                message: formData.message, // Maps to {{message}} in template
             },
             publicKey
         );

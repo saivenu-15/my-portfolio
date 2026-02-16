@@ -1,5 +1,6 @@
 import cropDiseaseImg from '../assets/images/crop-disease.png';
 import expenseTrackerImg from '../assets/images/expense-tracker.png';
+import financeClubImg from '../assets/images/finance-club.png';
 
 export const projects = [
     {
@@ -26,5 +27,17 @@ export const projects = [
         gradient: 'linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%)',
         icon: 'AccountBalanceWallet',
         image: expenseTrackerImg
+    },
+    {
+        title: 'Finance Club Website',
+        description: 'A responsive website for the college Finance Club built with vanilla HTML, CSS, and JavaScript. Features include club information, event listings, member profiles, and financial resources. This was my first web development project, showcasing fundamental web technologies.',
+        tech: 'HTML, CSS, JavaScript',
+        github: 'https://github.com/saivenu-15/Finance-Club',
+        live: 'https://unique-praline-5099bd.netlify.app/',
+        role: 'Frontend Developer',
+        color: 'from-purple-400 to-pink-600',
+        gradient: 'linear-gradient(135deg, #a855f7 0%, #db2777 100%)',
+        icon: 'AccountBalance',
+        image: financeClubImg
     },
 ];

@@ -80,12 +80,12 @@ const ProjectCard = ({ title, description, tech, github, live, role, gradient, i
                     )}
                 </Box>
 
-                <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                    <Typography variant="h5" gutterBottom sx={{ fontWeight: 700, color: '#fff', mb: 1.5 }}>
+                <CardContent sx={{ p: { xs: 2, sm: 2.5, md: 3 }, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                    <Typography variant="h5" gutterBottom sx={{ fontWeight: 700, color: '#fff', mb: 1, fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
                         {title}
                     </Typography>
 
-                    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', mb: 3, lineHeight: 1.6, flexGrow: 1 }}>
+                    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', mb: 2, lineHeight: 1.6, flexGrow: 1, fontSize: { xs: '0.85rem', md: '0.875rem' } }}>
                         {description}
                     </Typography>
 
@@ -98,7 +98,7 @@ const ProjectCard = ({ title, description, tech, github, live, role, gradient, i
                                 sx={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.05)',
                                     color: 'rgba(255, 255, 255, 0.9)',
-                                    fontSize: '0.7rem',
+                                    fontSize: '0.65rem',
                                     borderRadius: '4px',
                                     border: '1px solid rgba(255, 255, 255, 0.1)',
                                 }}
@@ -106,7 +106,7 @@ const ProjectCard = ({ title, description, tech, github, live, role, gradient, i
                         ))}
                     </Box>
 
-                    <Box sx={{ display: 'flex', gap: 2, mt: 'auto' }}>
+                    <Box sx={{ display: 'flex', gap: { xs: 1, sm: 2 }, mt: 'auto', flexDirection: { xs: 'column', sm: 'row' } }}>
                         {github && (
                             <Button
                                 variant="outlined"
@@ -117,6 +117,8 @@ const ProjectCard = ({ title, description, tech, github, live, role, gradient, i
                                 sx={{
                                     borderColor: 'rgba(255,255,255,0.2)',
                                     color: '#fff',
+                                    fontSize: { xs: '0.8rem', md: '0.875rem' },
+                                    py: { xs: 0.8, md: 1 },
                                     '&:hover': {
                                         borderColor: '#fff',
                                         background: 'rgba(255,255,255,0.05)'
@@ -136,6 +138,8 @@ const ProjectCard = ({ title, description, tech, github, live, role, gradient, i
                                 sx={{
                                     background: 'linear-gradient(90deg, #4d5dfb, #c084fc)',
                                     color: '#fff',
+                                    fontSize: { xs: '0.8rem', md: '0.875rem' },
+                                    py: { xs: 0.8, md: 1 },
                                     boxShadow: '0 4px 15px rgba(77, 93, 251, 0.3)',
                                     '&:hover': {
                                         boxShadow: '0 6px 20px rgba(77, 93, 251, 0.5)',

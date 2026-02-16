@@ -21,7 +21,7 @@ const Footer = () => {
                         <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.6)', maxWidth: '400px', mb: 3 }}>
                             Turning ideas into real-world, scalable applications. Open for internship opportunities.
                         </Typography>
-                        <Box sx={{ display: 'flex', gap: 1.5 }}>
+                        <Box sx={{ display: 'flex', gap: 1.5, justifyContent: { xs: 'center', md: 'flex-start' } }}>
                             {[
                                 { icon: <GitHub />, url: "https://github.com/saivenu-15" },
                                 { icon: <LinkedIn />, url: "https://www.linkedin.com/in/sai-venu-gopala-swamy-rudramahanathi-6248b3312/" },
@@ -31,7 +31,7 @@ const Footer = () => {
                                     key={idx}
                                     component="a"
                                     href={item.url}
-                                    target="_blank"
+                                    target={item.url.startsWith('mailto') ? "_self" : "_blank"}
                                     rel="noopener noreferrer"
                                     className="clickable"
                                     sx={{

@@ -79,22 +79,22 @@ const Home = () => {
                                 </Typography>
                             </Box>
 
-                            <Typography variant="h1" gutterBottom sx={{ color: '#fff', fontSize: { xs: '2.5rem', md: '4.5rem' }, fontWeight: 800, lineHeight: 1.1 }}>
+                            <Typography variant="h1" gutterBottom sx={{ color: '#fff', fontSize: { xs: '2.2rem', sm: '3.5rem', md: '4.5rem' }, fontWeight: 800, lineHeight: 1.2 }}>
                                 Hi, I'm <br />
-                                <span className="gradient-text" style={{ display: 'inline-block' }}>
+                                <span className="gradient-text">
                                     Sai Venu
                                 </span>
                             </Typography>
 
-                            <Typography variant="h5" sx={{ mb: 4, maxWidth: '650px', fontWeight: 500, color: 'rgba(255,255,255,0.8)', height: '1.5em' }}>
+                            <Typography variant="h5" sx={{ mb: 4, maxWidth: '650px', fontWeight: 500, color: 'rgba(255,255,255,0.8)', fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }, lineHeight: 1.4 }}>
                                 <TypewriterText text="Software Engineer Intern Aspirant | Full-Stack Developer" />
                             </Typography>
 
-                            <Typography variant="body1" color="rgba(255, 255, 255, 0.5)" sx={{ mb: 5, maxWidth: '600px', fontSize: '1.1rem', lineHeight: 1.6 }}>
+                            <Typography variant="body1" color="rgba(255, 255, 255, 0.5)" sx={{ mb: 5, maxWidth: '600px', fontSize: { xs: '0.95rem', md: '1.1rem' }, lineHeight: 1.6 }}>
                                 CSE Undergraduate @ RGUKT Srikakulam (2028). Passionate about building scalable, user-centric interfaces and exploring the frontiers of AI.
                             </Typography>
 
-                            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 5 }}>
+                            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 5, flexDirection: { xs: 'column', sm: 'row' } }}>
                                 <Button
                                     variant="contained"
                                     size="large"
@@ -157,7 +157,13 @@ const Home = () => {
                                         key={index}
                                         component="a"
                                         href={item.url}
-                                        target="_blank"
+                                        onClick={(e) => {
+                                            if (item.url.startsWith('mailto')) {
+                                                e.preventDefault();
+                                                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                            }
+                                        }}
+                                        target={item.url.startsWith('mailto') ? "_self" : "_blank"}
                                         rel="noopener noreferrer"
                                         sx={{
                                             color: 'rgba(255,255,255,0.6)',
@@ -218,8 +224,8 @@ const Home = () => {
                                 <Box
                                     sx={{
                                         position: 'relative',
-                                        width: { xs: '280px', md: '400px' },
-                                        height: { xs: '280px', md: '400px' },
+                                        width: { xs: '250px', sm: '320px', md: '400px' },
+                                        height: { xs: '250px', sm: '320px', md: '400px' },
                                         borderRadius: '50%',
                                         padding: '6px',
                                         background: 'rgba(3, 0, 20, 0.5)',
@@ -259,7 +265,7 @@ const Home = () => {
                                         border: '1px solid rgba(192, 132, 252, 0.3)',
                                         boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
                                         zIndex: 2,
-                                        display: 'flex',
+                                        display: { xs: 'none', sm: 'flex' },
                                         alignItems: 'center',
                                         gap: '8px'
                                     }}

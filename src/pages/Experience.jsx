@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 const Experience = () => {
     return (
-        <Box id="experience" sx={{ py: 10, position: 'relative' }}>
+        <Box id="experience" sx={{ py: { xs: 8, md: 10 }, px: { xs: 2, sm: 3, md: 0 }, position: 'relative' }}>
             <Container maxWidth="lg">
-                <Typography variant="h2" align="center" gutterBottom sx={{ fontWeight: 800, mb: 2 }}>
+                <Typography variant="h2" align="center" gutterBottom sx={{ fontWeight: 800, mb: 2, fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' } }}>
                     Experience & <span className="gradient-text">Achievements</span>
                 </Typography>
-                <Typography variant="body1" align="center" color="rgba(255,255,255,0.6)" sx={{ mb: 8, maxWidth: '700px', mx: 'auto' }}>
+                <Typography variant="body1" align="center" color="rgba(255,255,255,0.6)" sx={{ mb: { xs: 4, md: 8 }, maxWidth: '700px', mx: 'auto', fontSize: { xs: '0.9rem', md: '1rem' }, px: { xs: 2, sm: 0 } }}>
                     Internships, hackathons, and hands-on learning experiences that shaped my development journey.
                 </Typography>
 
@@ -67,7 +67,7 @@ const Experience = () => {
                                 <Box sx={{ flex: 1, display: { xs: 'none', md: 'block' } }} />
 
                                 {/* Card Content */}
-                                <Box sx={{ flex: 1, width: '100%', pl: { xs: 6, md: index % 2 === 0 ? 0 : 6 }, pr: { xs: 0, md: index % 2 === 0 ? 6 : 0 } }}>
+                                <Box sx={{ flex: 1, width: '100%', pl: { xs: 5, md: index % 2 === 0 ? 0 : 6 }, pr: { xs: 0, md: index % 2 === 0 ? 6 : 0 } }}>
                                     <Card
                                         sx={{
                                             position: 'relative',
@@ -84,8 +84,8 @@ const Experience = () => {
                                             }
                                         }}
                                     >
-                                        <CardContent sx={{ p: 3 }}>
-                                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
+                                        <CardContent sx={{ p: { xs: 2, sm: 2.5, md: 3 } }}>
+                                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2, flexWrap: 'wrap', gap: 1 }}>
                                                 <Box sx={{
                                                     p: 1,
                                                     borderRadius: '10px',
@@ -108,14 +108,14 @@ const Experience = () => {
                                                 />
                                             </Box>
 
-                                            <Typography variant="h6" sx={{ fontWeight: 700, color: '#fff', mb: 0.5 }}>
+                                            <Typography variant="h6" sx={{ fontWeight: 700, color: '#fff', mb: 0.5, fontSize: { xs: '1rem', md: '1.25rem' } }}>
                                                 {exp.role}
                                             </Typography>
-                                            <Typography variant="subtitle2" sx={{ color: '#4d5dfb', fontWeight: 600, mb: 2 }}>
+                                            <Typography variant="subtitle2" sx={{ color: '#4d5dfb', fontWeight: 600, mb: 2, fontSize: { xs: '0.8rem', md: '0.875rem' } }}>
                                                 {exp.organization}
                                             </Typography>
 
-                                            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
+                                            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, fontSize: { xs: '0.85rem', md: '0.875rem' } }}>
                                                 {exp.description}
                                             </Typography>
 
@@ -124,7 +124,7 @@ const Experience = () => {
                                                     {exp.achievements.map((achievement, i) => (
                                                         <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mt: 1 }}>
                                                             <Circle sx={{ fontSize: 6, color: '#4d5dfb', mt: 1, flexShrink: 0 }} />
-                                                            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>
+                                                            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: { xs: '0.8rem', md: '0.9rem' } }}>
                                                                 {achievement}
                                                             </Typography>
                                                         </Box>

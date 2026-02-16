@@ -40,10 +40,10 @@ const Navbar = () => {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', p: 2, backgroundColor: '#030014', height: '100%', color: 'white' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', p: 4, backgroundColor: '#030014', height: '100%', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item.to} disablePadding>
+                    <ListItem key={item.to} disablePadding sx={{ mb: 2 }}>
                         <Link
                             to={item.to}
                             spy={true}
@@ -53,8 +53,20 @@ const Navbar = () => {
                             onClick={handleDrawerToggle}
                             onSetActive={() => handleSetActive(item.to)}
                             className="clickable"
+                            style={{ width: '100%' }}
                         >
-                            <ListItemText primary={item.label} sx={{ textAlign: 'center', cursor: 'pointer', py: 1 }} />
+                            <ListItemText 
+                                primary={item.label} 
+                                sx={{ 
+                                    textAlign: 'center', 
+                                    cursor: 'pointer',
+                                    '& .MuiTypography-root': {
+                                        fontSize: '1.5rem',
+                                        fontWeight: 700,
+                                        letterSpacing: '1px'
+                                    }
+                                }} 
+                            />
                         </Link>
                     </ListItem>
                 ))}
@@ -127,21 +139,25 @@ const Navbar = () => {
                     </Box>
 
                     {/* Mobile Menu Button */}
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerToggle}
-                        className="clickable"
-                        sx={{
-                            display: { md: 'none' },
-                            position: 'fixed',
-                            right: 20,
-                            top: 20,
-                            backgroundColor: 'rgba(3, 0, 20, 0.7)',
-                            backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.1)'
-                        }}
-                    >
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerToggle}
+                            className="clickable"
+                            sx={{
+                                display: { md: 'none' },
+                                position: 'fixed',
+                                right: 15,
+                                top: 15,
+                                width: '45px',
+                                height: '45px',
+                                backgroundColor: 'rgba(3, 0, 20, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                zIndex: 1000,
+                                boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+                            }}
+                        >
                         <MenuIcon />
                     </IconButton>
                 </Toolbar>

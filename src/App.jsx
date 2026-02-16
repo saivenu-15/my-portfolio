@@ -30,7 +30,7 @@ function App() {
       {!prefersReducedMotion && <CustomCursor />}
 
       {!loading && (
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', opacity: 1, transition: 'opacity 1s ease' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', opacity: 1, transition: 'opacity 1s ease', overflowX: 'hidden' }}>
           <ScrollProgress />
           <Navbar />
           <Box component="main">

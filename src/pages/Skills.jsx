@@ -32,7 +32,7 @@ const Skills = () => {
     return (
         <Box id="skills" sx={{ py: 10, position: 'relative' }}>
             <Container maxWidth="lg">
-                <Typography variant="h2" align="center" gutterBottom sx={{ fontWeight: 800, mb: 2 }}>
+                <Typography variant="h2" align="center" gutterBottom sx={{ fontWeight: 800, mb: 2, fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' } }}>
                     Technical <span className="gradient-text">Skills</span>
                 </Typography>
                 <Typography variant="body1" align="center" color="rgba(255,255,255,0.6)" sx={{ mb: 8, maxWidth: '700px', mx: 'auto' }}>
@@ -70,12 +70,12 @@ const Skills = () => {
                                                 <Paper
                                                     elevation={0}
                                                     sx={{
-                                                        p: 3,
+                                                        p: { xs: 2, sm: 3 },
                                                         display: 'flex',
                                                         flexDirection: 'column',
                                                         alignItems: 'center',
                                                         justifyContent: 'center',
-                                                        gap: 2,
+                                                        gap: { xs: 1.5, sm: 2 },
                                                         background: 'rgba(255, 255, 255, 0.03)',
                                                         backdropFilter: 'blur(10px)',
                                                         border: '1px solid rgba(255, 255, 255, 0.05)',
@@ -83,6 +83,8 @@ const Skills = () => {
                                                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                                         position: 'relative',
                                                         overflow: 'hidden',
+                                                        minWidth: 0, // Prevent flex items from overflowing
+                                                        width: '100%',
                                                         '&:hover': {
                                                             transform: 'translateY(-8px)',
                                                             borderColor: category.color,
@@ -121,11 +123,11 @@ const Skills = () => {
                                                             display: 'flex',
                                                             alignItems: 'center',
                                                             justifyContent: 'center',
-                                                            height: 60,
+                                                            height: { xs: 45, sm: 60 },
                                                             zIndex: 1
                                                         }}
                                                     >
-                                                        <IconWrapper iconName={skill.icon} fontSize="3.5rem" />
+                                                        <IconWrapper iconName={skill.icon} fontSize={{ xs: '2.5rem', sm: '3.5rem' }} />
                                                     </Box>
 
                                                     {/* Skill Name */}
@@ -135,7 +137,8 @@ const Skills = () => {
                                                         sx={{
                                                             fontWeight: 600,
                                                             color: '#fff',
-                                                            zIndex: 1
+                                                            zIndex: 1,
+                                                            fontSize: { xs: '0.85rem', sm: '1rem' }
                                                         }}
                                                     >
                                                         {skill.name}

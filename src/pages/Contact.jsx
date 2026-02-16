@@ -11,6 +11,44 @@ const intentOptions = [
     'Technical Discussion',
 ];
 
+const CustomInput = (props) => (
+    <TextField
+        fullWidth
+        variant="outlined"
+        {...props}
+        sx={{
+            '& .MuiOutlinedInput-root': {
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '16px',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                color: '#fff',
+                '& fieldset': { border: 'none' },
+                '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 8px 30px rgba(0,0,0,0.2)'
+                },
+                '&.Mui-focused': {
+                    backgroundColor: 'rgba(5, 5, 20, 0.8)',
+                    boxShadow: '0 0 0 2px rgba(77, 93, 251, 0.4), 0 10px 40px rgba(77, 93, 251, 0.2)',
+                    transform: 'scale(1.01)',
+                }
+            },
+            '& .MuiInputLabel-root': {
+                color: 'rgba(255, 255, 255, 0.5)',
+                transition: 'all 0.3s ease',
+                '&.Mui-focused': { color: '#c084fc', transform: 'translate(14px, -9px) scale(0.75)' }
+            },
+            '& .MuiInputBase-input': {
+                fontWeight: 500,
+                letterSpacing: '0.02em'
+            },
+            ...props.sx
+        }}
+    />
+);
+
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '', intent: '' });
     const [status, setStatus] = useState({ loading: false, success: false, error: null });
@@ -36,46 +74,10 @@ const Contact = () => {
         }
     };
 
-    const CustomInput = (props) => (
-        <TextField
-            fullWidth
-            variant="outlined"
-            {...props}
-            sx={{
-                '& .MuiOutlinedInput-root': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                    borderRadius: '16px',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    color: '#fff',
-                    '& fieldset': { border: 'none' },
-                    '&:hover': {
-                        backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 8px 30px rgba(0,0,0,0.2)'
-                    },
-                    '&.Mui-focused': {
-                        backgroundColor: 'rgba(5, 5, 20, 0.8)',
-                        boxShadow: '0 0 0 2px rgba(77, 93, 251, 0.4), 0 10px 40px rgba(77, 93, 251, 0.2)',
-                        transform: 'scale(1.01)',
-                    }
-                },
-                '& .MuiInputLabel-root': {
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    transition: 'all 0.3s ease',
-                    '&.Mui-focused': { color: '#c084fc', transform: 'translate(14px, -9px) scale(0.75)' }
-                },
-                '& .MuiInputBase-input': {
-                    fontWeight: 500,
-                    letterSpacing: '0.02em'
-                },
-                ...props.sx
-            }}
-        />
-    );
+
 
     return (
-        <Box id="contact" sx={{ py: 20, position: 'relative', overflow: 'hidden' }}>
+        <Box id="contact" sx={{ py: { xs: 12, md: 20 }, px: { xs: 2, sm: 3, md: 0 }, position: 'relative', overflow: 'hidden' }}>
             {/* Background Flair */}
             <Box sx={{
                 position: 'absolute',
@@ -90,22 +92,22 @@ const Contact = () => {
             }} />
 
             <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-                <Box sx={{ mb: 12, textAlign: 'center' }}>
+                <Box sx={{ mb: { xs: 6, md: 12 }, textAlign: 'center' }}>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <Typography variant="h2" gutterBottom sx={{ fontWeight: 800, letterSpacing: '-0.02em', mb: 3 }}>
+                        <Typography variant="h2" gutterBottom sx={{ fontWeight: 800, letterSpacing: '-0.02em', mb: 3, fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' } }}>
                             Ready to <span className="gradient-text">Collaborate?</span>
                         </Typography>
-                        <Typography variant="body1" color="rgba(255,255,255,0.6)" sx={{ maxWidth: '600px', mx: 'auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
+                        <Typography variant="body1" color="rgba(255,255,255,0.6)" sx={{ maxWidth: '600px', mx: 'auto', fontSize: { xs: '0.95rem', md: '1.1rem' }, lineHeight: 1.6, px: { xs: 2, sm: 0 } }}>
                             Searching for a robust, scalable frontend solution? Or maybe just want to say hi? I'm always open to discussing new ideas and opportunities.
                         </Typography>
                     </motion.div>
                 </Box>
 
-                <Grid container spacing={8}>
+                <Grid container spacing={{ xs: 4, md: 8 }}>
                     {/* Contact Info */}
                     <Grid item xs={12} md={5}>
                         <motion.div
@@ -217,7 +219,7 @@ const Contact = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <Card sx={{
-                                p: { xs: 4, md: 6 },
+                                p: { xs: 2.5, sm: 4, md: 6 },
                                 background: 'rgba(255, 255, 255, 0.01)',
                                 backdropFilter: 'blur(10px)',
                                 border: '1px solid rgba(255, 255, 255, 0.08)',
